@@ -65,7 +65,7 @@ export default function Footer() {
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-5 flex flex-col items-start">
             <a href="#home" className="flex items-center mb-6">
-              <Logo size={42} showText={true} />
+              <Logo size={110} showText={true} />
             </a>
             <p className="line-height-[1.7] text-sm mb-8">
               We are dedicated to building a healthier, stronger, and more resilient community. Be Strong Fitness Club provides elite fitness training, certified coaching, and custom diet blueprints to elevate your physical potential.

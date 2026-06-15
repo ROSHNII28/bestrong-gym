@@ -5,6 +5,7 @@ import Logo from './Logo';
 export default function Navbar({ onBookSessionClick }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,9 +15,26 @@ export default function Navbar({ onBookSessionClick }) {
         setIsScrolled(false);
       }
     };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleScroll();
+    handleResize();
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
+
+  const logoSize = isMobile 
+    ? (isScrolled ? 72 : 90) 
+    : (isScrolled ? 84 : 120);
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -37,7 +55,7 @@ export default function Navbar({ onBookSessionClick }) {
     >
       {/* Brand Logo */}
       <a href="#home" className="flex items-center">
-        <Logo size={42} showText={true} />
+        <Logo size={logoSize} showText={true} />
       </a>
 
       {/* Desktop Navigation Links */}

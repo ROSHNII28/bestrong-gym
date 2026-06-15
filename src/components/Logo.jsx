@@ -7,8 +7,12 @@ export default function Logo({ size = 36, className = '' }) {
       <img
         src={logoImg}
         alt="Be Strong Fitness Club"
-        style={{ height: `${size}px`, width: 'auto' }}
-        className="object-contain"
+        style={{ 
+          height: `${size}px`, 
+          width: 'auto',
+          filter: 'invert(1) hue-rotate(180deg)'
+        }}
+        className="object-contain transition-all duration-300"
       />
     </div>
   );
