@@ -77,10 +77,9 @@ export default function About() {
     { title: 'Healthy Lifestyle', icon: <HeartPulse size={24} />, desc: 'Holistic approach integrating nutrition coaching and habit building.' },
   ];
 
-  const trainers = [
-    { name: 'Sarah Connor', role: 'Head CrossFit Coach', imgInitials: 'SC', specialty: 'Functional Fitness & Conditioning' },
-    { name: 'Marcus Aurelius', role: 'Strength Conditioning Lead', imgInitials: 'MA', specialty: 'Hypertrophy & Powerlifting' },
-    { name: 'Elena Rostova', role: 'Yoga & Mobility Expert', imgInitials: 'ER', specialty: 'Flexibility, Vinyasa & Recovery' },
+  const owners = [
+    { name: 'Hemant Chimankare', role: 'Owner', imgInitials: 'HC', specialty: 'K11 Certified Professional', instagram: 'https://www.instagram.com/chimankarehemant?igsh=aGk2YThheWlkMzF6', handle: '@chimankarehemant' },
+    { name: 'Swapnil Suryawanshi', role: 'Co-Owner', imgInitials: 'SS', specialty: 'K11 Certified Professional', instagram: 'https://www.instagram.com/sswapnilll?igsh=ZWg0OTJiOG1sMTRq', handle: '@sswapnilll' },
   ];
 
   return (
@@ -165,42 +164,40 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column: Trainers Preview */}
+          {/* Right Column: Leadership Preview */}
           <div className="text-left">
             <h3 className="text-2xl md:text-3xl font-black uppercase text-text-white mb-8 font-heading">
-              Meet Our Certified Coaches
+              Meet Our Leadership
             </h3>
 
             <div className="flex flex-col gap-6">
-              {trainers.map((trainer, i) => (
+              {owners.map((owner, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-6 p-5 bg-bg-card border border-border rounded-lg transition-all duration-400 hover:border-primary hover:-translate-y-1 hover:scale-[1.01] hover:shadow-md"
                 >
-                  {/* Trainer Avatar Box */}
+                  {/* Owner Avatar Box */}
                   <div className="w-14 h-14 rounded-full bg-primary/15 text-primary flex items-center justify-center font-heading font-extrabold text-lg border-2 border-primary flex-shrink-0">
-                    {trainer.imgInitials}
+                    {owner.imgInitials}
                   </div>
 
-                  {/* Trainer Details */}
+                  {/* Owner Details */}
                   <div className="flex-grow">
-                    <h4 className="text-lg font-bold text-text-white mb-0.5 font-heading">{trainer.name}</h4>
+                    <h4 className="text-lg font-bold text-text-white mb-0.5 font-heading">{owner.name}</h4>
                     <p className="text-primary text-xs md:text-sm font-semibold mb-0.5 uppercase tracking-wide">
-                      {trainer.role}
+                      {owner.role}
                     </p>
+                    <a
+                      href={owner.instagram}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-text-muted hover:text-primary text-xs font-semibold mb-2 inline-flex items-center gap-1.5 transition-colors duration-200"
+                    >
+                      <InstagramIcon size={14} className="text-primary" /> {owner.handle}
+                    </a>
                     <p className="text-text-muted text-xs md:text-sm">
-                      Specialty: {trainer.specialty}
+                      Specialty: {owner.specialty}
                     </p>
-                  </div>
-
-                  {/* Social Handles */}
-                  <div className="flex flex-col gap-2">
-                    <a href="#" className="text-text-muted hover:text-primary transition-colors duration-200">
-                      <InstagramIcon size={16} />
-                    </a>
-                    <a href="#" className="text-text-muted hover:text-primary transition-colors duration-200">
-                      <TwitterIcon size={16} />
-                    </a>
                   </div>
                 </div>
               ))}

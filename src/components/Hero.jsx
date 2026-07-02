@@ -3,9 +3,9 @@ import { TrendingUp, ShieldCheck, Trophy } from 'lucide-react';
 
 export default function Hero({ onBookSessionClick }) {
   const stats = [
-    { value: '50+', label: 'Elite Trainers', icon: <ShieldCheck size={20} className="text-primary" /> },
-    { value: '15k+', label: 'Happy Members', icon: <TrendingUp size={20} className="text-primary" /> },
-    { value: '120+', label: 'Modern Equipment', icon: <Trophy size={20} className="text-primary" /> },
+    { value: '7 Years', label: 'Gym Experience', icon: <Trophy size={20} className="text-primary" /> },
+    { value: '165', label: 'Active Members', icon: <TrendingUp size={20} className="text-primary" /> },
+    { value: '4', label: 'Certified Trainers', icon: <ShieldCheck size={20} className="text-primary" /> },
   ];
 
   return (

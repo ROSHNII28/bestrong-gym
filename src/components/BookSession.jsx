@@ -3,21 +3,21 @@ import { Calendar, Clock, User, Phone, Mail, Award, CheckCircle, X } from 'lucid
 
 const trainers = [
   'Any Trainer',
-  'Sarah Connor (CrossFit)',
-  'Marcus Aurelius (Strength Conditioning)',
-  'Elena Rostova (Yoga & Recovery)',
-  'John Carver (Boxing & MMA)',
-  'Diana Prince (Athletic Performance)',
-  'Leonidas Spartacus (Powerlifting)',
+  'Walmik Jagtap (Founder & Lead)',
+  'Manoj Rathod (K11 Certified)',
+  'Swami Ahire (Hypertrophy & Powerlifting)',
+  'Hemant Patil (Functional & Conditioning)',
 ];
 
 const programs = [
   'General Gym Membership',
   'Gym Membership + Personal Trainer',
-  'Weight Loss Program',
-  'Muscle Building Program',
-  'Strength Training',
-  'Student Membership',
+  'Weight Training',
+  'Cardio Training',
+  'Personal Training',
+  'Zumba',
+  'CrossFit',
+  'Nutritional Guidance',
   'Free Trial Session',
 ];
 
@@ -53,27 +53,17 @@ export default function BookSession({ isOpen, onClose, selectedProgram, inline =
         }
       } else if (selectedProgram.startsWith('Membership Consultation - ')) {
         const planName = selectedProgram.replace('Membership Consultation - ', '');
-        if (planName === 'Basic Access') {
+        if (planName.includes('General')) {
           matchedProgram = 'General Gym Membership';
-        } else if (planName === 'Premium Club' || planName === 'Elite Athlete') {
+        } else if (planName.includes('Trainer') || planName.includes('Personal')) {
           matchedProgram = 'Gym Membership + Personal Trainer';
           wantsTrainer = true;
         } else {
           matchedProgram = 'General Gym Membership';
         }
-      } else if (selectedProgram === 'Strength Training') {
-        matchedProgram = 'Strength Training';
-      } else if (selectedProgram === '1-on-1 Personal Coaching') {
+      } else if (selectedProgram === 'Personal Training') {
         matchedProgram = 'Gym Membership + Personal Trainer';
         wantsTrainer = true;
-      } else if (selectedProgram === 'Nutrition & Macro Planning' || selectedProgram === 'Cardio & HIIT' || selectedProgram === 'Yoga & Flexibility' || selectedProgram === 'CrossFit & Functional') {
-        if (selectedProgram === 'Cardio & HIIT' || selectedProgram === 'CrossFit & Functional') {
-          matchedProgram = 'Muscle Building Program';
-        } else if (selectedProgram === 'Yoga & Flexibility') {
-          matchedProgram = 'Free Trial Session';
-        } else {
-          matchedProgram = 'General Gym Membership';
-        }
       } else {
         const found = programs.find(p => p.toLowerCase() === selectedProgram.toLowerCase());
         matchedProgram = found || 'General Gym Membership';
@@ -129,7 +119,7 @@ export default function BookSession({ isOpen, onClose, selectedProgram, inline =
 - Time: ${formData.time}`;
       
       const encodedText = encodeURIComponent(textMessage);
-      const whatsappUrl = `https://wa.me/918263919311?text=${encodedText}`;
+      const whatsappUrl = `https://wa.me/918888972265?text=${encodedText}`;
       
       setTimeout(() => {
         setIsSubmitting(false);
@@ -185,7 +175,7 @@ export default function BookSession({ isOpen, onClose, selectedProgram, inline =
             Request Submitted!
           </h3>
           <p className="text-text-muted mb-8 text-[0.95rem] leading-relaxed">
-            Your request has been compiled. We have redirected you to WhatsApp to finalize your gym membership with us at **918263919311**.
+            Your request has been compiled. We have redirected you to WhatsApp to finalize your gym membership with us at **+91 88889 72265** or call us at **+91 82086 90487**.
           </p>
 
           <div className="bg-white/2 border border-border rounded-lg p-6 text-left mb-8 flex flex-col gap-3">
@@ -387,12 +377,15 @@ export default function BookSession({ isOpen, onClose, selectedProgram, inline =
                     }`}
                   >
                     <option value="" className="bg-bg-card">Select Time</option>
-                    <option value="06:00 AM - 07:00 AM" className="bg-bg-card">06:00 AM - 07:00 AM</option>
-                    <option value="08:00 AM - 09:00 AM" className="bg-bg-card">08:00 AM - 09:00 AM</option>
-                    <option value="10:00 AM - 11:00 AM" className="bg-bg-card">10:00 AM - 11:00 AM</option>
-                    <option value="04:00 PM - 05:00 PM" className="bg-bg-card">04:00 PM - 05:00 PM</option>
-                    <option value="06:00 PM - 07:00 PM" className="bg-bg-card">06:00 PM - 07:00 PM</option>
-                    <option value="08:00 PM - 09:00 PM" className="bg-bg-card">08:00 PM - 09:00 PM</option>
+                    <option value="06:00 AM - 07:00 AM" className="bg-bg-card">06:00 AM - 07:00 AM (Morning)</option>
+                    <option value="07:00 AM - 08:00 AM" className="bg-bg-card">07:00 AM - 08:00 AM (Morning)</option>
+                    <option value="08:00 AM - 09:00 AM" className="bg-bg-card">08:00 AM - 09:00 AM (Morning)</option>
+                    <option value="09:00 AM - 10:00 AM" className="bg-bg-card">09:00 AM - 10:00 AM (Morning)</option>
+                    <option value="05:00 PM - 06:00 PM" className="bg-bg-card">05:00 PM - 06:00 PM (Evening)</option>
+                    <option value="06:00 PM - 07:00 PM" className="bg-bg-card">06:00 PM - 07:00 PM (Evening)</option>
+                    <option value="07:00 PM - 08:00 PM" className="bg-bg-card">07:00 PM - 08:00 PM (Evening)</option>
+                    <option value="08:00 PM - 09:00 PM" className="bg-bg-card">08:00 PM - 09:00 PM (Evening)</option>
+                    <option value="09:00 PM - 10:00 PM" className="bg-bg-card">09:00 PM - 10:00 PM (Evening)</option>
                   </select>
                 </div>
                 {errors.time && <span className="text-red-500 text-xs font-medium mt-0.5">{errors.time}</span>}

@@ -65,7 +65,7 @@ function App() {
 
       {/* Floating WhatsApp Widget */}
       <a
-        href="https://wa.me/918263919311?text=Hello%20Be%20Strong%20Gym!%20I'd%20like%20to%20enquire%20about%20your%20gym%20memberships%20and%20classes."
+        href="https://wa.me/918888972265?text=Hello%20Be%20Strong%20Gym!%20I'd%20like%20to%20enquire%20about%20your%20gym%20memberships%20and%20classes."
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-8 right-8 bg-[#25D366] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg shadow-[#25D366]/40 z-[9999] transition-all duration-300 hover:scale-110 hover:shadow-[#25D366]/60 cursor-pointer animate-pulse-glow"
