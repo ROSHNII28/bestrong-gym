@@ -6,7 +6,7 @@ export default function Logo({ size = 36, className = '' }) {
     <div className={`flex items-center select-none ${className}`}>
       <img
         src={logoImg}
-        alt="Be Strong Fitness Club"
+        alt="Be Strong Fitness Club - Premier Gym & Fitness Center in Chalisgaon"
         style={{ 
           height: `${size}px`, 
           width: 'auto',

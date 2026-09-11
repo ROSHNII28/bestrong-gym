@@ -51,12 +51,12 @@ export default function About() {
       ],
     },
     facilities: {
-      title: 'World-Class Gym Facilities',
-      desc: 'Spread over 15,000 square feet, our gym offers top-tier equipment and dedicated zones to ensure you get the absolute best out of every single training session.',
+      title: 'Being Strong (Jerai Fitness) Facility',
+      desc: 'Our club is equipped with world-class Being Strong (manufactured by Jerai Fitness) machinery, designed with cutting-edge biomechanics to provide optimal muscle engagement, maximum safety, and an elite lifting experience.',
       bullets: [
-        'Hammer Strength & Life Fitness rigs',
-        'Dedicated Olympic Weightlifting platforms',
-        'Spacious turf area for functional training',
+        'Being Strong (Jerai Fitness) precision selectorized machines',
+        'Dedicated Olympic weightlifting platforms & heavy dumbbell arrays',
+        'Heavy-duty power racks and plate-loaded strength stations',
       ],
     },
     community: {
@@ -72,15 +72,14 @@ export default function About() {
 
   const features = [
     { title: 'Certified Trainers', icon: <Award size={24} />, desc: 'Guidance from national-level athletes and certified coaches.' },
-    { title: 'Premium Equipment', icon: <Dumbbell size={24} />, desc: 'Elite cardio, strength, and Olympic weightlifting configurations.' },
+    { title: 'Being Strong (Jerai)', icon: <Dumbbell size={24} />, desc: 'Equipped with official Being Strong (Jerai Fitness) premium machinery.' },
     { title: 'Personalized Coaching', icon: <ShieldCheck size={24} />, desc: 'Custom tailored workout programs matching your unique goals.' },
     { title: 'Healthy Lifestyle', icon: <HeartPulse size={24} />, desc: 'Holistic approach integrating nutrition coaching and habit building.' },
   ];
 
   const owners = [
     { name: 'Hemant Chimankare', role: 'Owner', imgInitials: 'HC', specialty: 'K11 Certified Professional', instagram: 'https://www.instagram.com/chimankarehemant?igsh=aGk2YThheWlkMzF6', handle: '@chimankarehemant' },
-    { name: 'Swapnil Suryawanshi', role: 'Co-Owner', imgInitials: 'SS', specialty: 'K11 Certified Professional', instagram: 'https://www.instagram.com/sswapnilll?igsh=ZWg0OTJiOG1sMTRq', handle: '@sswapnilll' },
-  ];
+  ]
 
   return (
     <section id="about" className="py-32 px-6 md:px-12 bg-bg-light relative">
@@ -131,9 +130,8 @@ export default function About() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`bg-transparent border-none font-heading font-bold text-sm md:text-base cursor-pointer px-4 py-2 relative transition-colors duration-200 outline-none ${
-                    activeTab === tab ? 'text-primary' : 'text-text-muted hover:text-primary'
-                  }`}
+                  className={`bg-transparent border-none font-heading font-bold text-sm md:text-base cursor-pointer px-4 py-2 relative transition-colors duration-200 outline-none ${activeTab === tab ? 'text-primary' : 'text-text-muted hover:text-primary'
+                    }`}
                 >
                   {tab.charAt(0).toUpperCase() + tab.slice(1)}
                   {activeTab === tab && (

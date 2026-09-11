@@ -16,9 +16,9 @@ export default function Gallery() {
     {
       id: 2,
       category: 'equipments',
-      title: 'Dumbbell Rack',
+      title: 'Being Strong Dumbbell Line',
       image: 'https://images.unsplash.com/photo-1638536532686-d610adfc8e5c?q=80&w=600&auto=format&fit=crop',
-      desc: 'Sleek custom dumbbell arrays scaling from 2kg to 60kg.',
+      desc: 'Official Being Strong (Jerai Fitness) custom dumbbell arrays scaling from 2kg to 60kg.',
     },
     {
       id: 3,
@@ -37,9 +37,9 @@ export default function Gallery() {
     {
       id: 5,
       category: 'equipments',
-      title: 'Power Cage Rigs',
+      title: 'Jerai Fitness Power Rigs',
       image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=crop',
-      desc: 'Heavy-duty steel cages for squatting, bench pressing, and pull-up protocols.',
+      desc: 'Heavy-duty Being Strong / Jerai Fitness steel cages for squatting, bench pressing, and pull-up protocols.',
     },
     {
       id: 6,
@@ -58,9 +58,9 @@ export default function Gallery() {
     {
       id: 8,
       category: 'equipments',
-      title: 'Rowing Machines',
+      title: 'Being Strong Iso-Lateral Stations',
       image: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=600&auto=format&fit=crop',
-      desc: 'Concept2 rowers providing total-body low-impact cardio conditioning.',
+      desc: 'State-of-the-art Being Strong (Jerai Fitness) plate-loaded and selectorized machines.',
     },
     {
       id: 9,
@@ -130,7 +130,8 @@ export default function Gallery() {
               {/* Image */}
               <img
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title} - Be Strong Fitness Club Facilities Chalisgaon`}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-106"
               />
 

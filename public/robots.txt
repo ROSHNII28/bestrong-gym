@@ -1,0 +1,6 @@
+# Robots.txt for Be Strong Fitness Club
+User-agent: *
+Allow: /
+
+# Sitemap URL
+Sitemap: https://bestronggym.vercel.app/sitemap.xml

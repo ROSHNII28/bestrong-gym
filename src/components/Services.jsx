@@ -10,10 +10,10 @@ export default function Services({ onBookSessionClick }) {
       title: 'Weight Training',
       icon: <Dumbbell size={32} />,
       shortDesc: 'Build raw power, increase muscle mass, and perfect your form with progressive lifting.',
-      longDesc: 'Our Weight Training program focuses on building core strength, muscle hypertrophy, and correct lifting form. Under the guidance of our certified coaches, you will master compound lifts, barbell dynamics, and structured bodybuilding protocols designed for all experience levels.',
+      longDesc: 'Our Weight Training program focuses on building core strength, muscle hypertrophy, and correct lifting form on official Being Strong (Jerai Fitness) machinery. Under the guidance of our certified coaches, you will master compound lifts, barbell dynamics, and structured bodybuilding protocols with elite biomechanics.',
       intensity: 'High',
       duration: '60 Mins',
-      benefits: ['Hypertrophy & muscle growth', 'Increased structural strength', 'Improved joint stability'],
+      benefits: ['Being Strong (Jerai Fitness) stations', 'Hypertrophy & muscle growth', 'Increased structural strength', 'Improved joint stability'],
     },
     {
       id: 'cardio',

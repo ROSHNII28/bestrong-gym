@@ -48,20 +48,20 @@ export default function Trainers({ onBookTrainerClick }) {
       image: walmikImg,
       specialty: 'Transformation',
       experience: '7 Years',
-      bio: 'Experienced fitness trainer with 7+ years of expertise in strength training, muscle building, fat loss, and body transformation. Dedicated to helping members achieve sustainable results through structured training and proper guidance.',
-      certifications: ['Certified Personal Trainer (CPT)', 'Expert Strength & Conditioning Coach'],
+      /*bio: 'Experienced fitness trainer with 7+ years of expertise in strength training, muscle building, fat loss, and body transformation. Dedicated to helping members achieve sustainable results through structured training and proper guidance.',
+      certifications: ['Certified Personal Trainer (CPT)', 'Expert Strength & Conditioning Coach'],*/
       instagram: '@jagtapwalmik02',
       instagramLink: 'https://www.instagram.com/jagtapwalmik02?igsh=MXI1Mjd3cHhhOHZvdg==',
     },
     {
       id: 'manoj',
       name: 'Manoj Rathod',
-      role: 'Certified Strength & Conditioning Coach',
+      role: 'Strength & Conditioning Coach',
       image: manojImg,
       specialty: 'Strength Lead',
       experience: '6 Years',
-      bio: 'K11 Certified Fitness Trainer specializing in strength development, muscle gain, and personalized workout programs. Focused on helping members build strength, confidence, and long-term fitness habits.',
-      certifications: ['K11 Certified Fitness Professional', 'Advanced Strength Training Certified'],
+      /*bio: 'K11 Certified Fitness Trainer specializing in strength development, muscle gain, and personalized workout programs. Focused on helping members build strength, confidence, and long-term fitness habits.',
+      certifications: ['K11 Certified Fitness Professional', 'Advanced Strength Training Certified'],*/
       instagram: '@manojrathod.7',
       instagramLink: 'https://www.instagram.com/manojrathod.7?igsh=OXhnYXJkenFzMmh4',
     },
@@ -72,8 +72,8 @@ export default function Trainers({ onBookTrainerClick }) {
       image: swamiImg,
       specialty: 'Powerlifting',
       experience: '2.5 Years',
-      bio: 'Strength and conditioning coach focused on improving performance, increasing muscle mass, and mastering lifting techniques. Passionate about helping members train safely and reach their full potential.',
-      certifications: ['Hypertrophy Training Specialist', 'Powerlifting Technique Certified'],
+      /* bio: 'Strength and conditioning coach focused on improving performance, increasing muscle mass, and mastering lifting techniques. Passionate about helping members train safely and reach their full potential.',
+       certifications: ['Hypertrophy Training Specialist', 'Powerlifting Technique Certified'],*/
       instagram: '@sammy.fitcoach',
       instagramLink: 'https://www.instagram.com/sammy.fitcoach?igsh=bmt4cmRlbWpsams=',
     },
@@ -84,8 +84,8 @@ export default function Trainers({ onBookTrainerClick }) {
       image: hemantImg,
       specialty: 'Conditioning',
       experience: '2.5 Years',
-      bio: 'Functional fitness trainer specializing in agility, endurance, mobility, and full-body conditioning. Helps members improve athletic performance, movement quality, and overall fitness levels.',
-      certifications: ['Functional Training Specialist', 'Cardiorespiratory Conditioning Certified'],
+      /* bio: 'Functional fitness trainer specializing in agility, endurance, mobility, and full-body conditioning. Helps members improve athletic performance, movement quality, and overall fitness levels.',
+       certifications: ['Functional Training Specialist', 'Cardiorespiratory Conditioning Certified'],*/
       instagram: '@mr_hemant__05',
       instagramLink: 'https://www.instagram.com/mr_hemant__05?igsh=dWlrM2F6bmkwcG92',
     },
@@ -121,7 +121,8 @@ export default function Trainers({ onBookTrainerClick }) {
                 <div className="relative w-full h-full flex items-center justify-center p-5">
                   <img
                     src={trainer.image}
-                    alt={trainer.name}
+                    alt={`${trainer.name} - ${trainer.role} at Be Strong Fitness Club Chalisgaon`}
+                    loading="lazy"
                     className="max-h-full max-w-full object-contain filter invert contrast-125 brightness-110 drop-shadow-[0_0_18px_rgba(229,124,0,0.35)] transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -158,24 +159,28 @@ export default function Trainers({ onBookTrainerClick }) {
                   <InstagramIcon size={14} className="text-primary" /> {trainer.instagram}
                 </a>
 
-                <p className="text-text-muted text-[0.88rem] leading-relaxed mb-6">
-                  {trainer.bio}
-                </p>
+                {trainer.bio && (
+                  <p className="text-text-muted text-[0.88rem] leading-relaxed mb-6">
+                    {trainer.bio}
+                  </p>
+                )}
 
                 {/* Certifications Box */}
-                <div className="border-t border-border pt-4 mb-6 flex-grow">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-text-white mb-2.5 flex items-center gap-1.5 font-heading">
-                    <Award size={15} className="text-primary" /> Credentials
-                  </h4>
-                  <ul className="list-none p-0 flex flex-col gap-1.5">
-                    {trainer.certifications.map((cert, i) => (
-                      <li key={i} className="text-xs text-text-muted relative pl-3.5 leading-relaxed">
-                        <span className="absolute left-0 text-primary font-bold">•</span>
-                        {cert}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {trainer.certifications && trainer.certifications.length > 0 && (
+                  <div className="border-t border-border pt-4 mb-6 flex-grow">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-text-white mb-2.5 flex items-center gap-1.5 font-heading">
+                      <Award size={15} className="text-primary" /> Credentials
+                    </h4>
+                    <ul className="list-none p-0 flex flex-col gap-1.5">
+                      {trainer.certifications.map((cert, i) => (
+                        <li key={i} className="text-xs text-text-muted relative pl-3.5 leading-relaxed">
+                          <span className="absolute left-0 text-primary font-bold">•</span>
+                          {cert}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* Booking Button */}
                 <button

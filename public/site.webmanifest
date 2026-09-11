@@ -1,0 +1,21 @@
+{
+  "name": "Be Strong Fitness Club",
+  "short_name": "Be Strong Gym",
+  "description": "Premier gym and fitness center in Chalisgaon offering certified personal training, strength workouts, cardio, and body transformation.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0C0C0E",
+  "theme_color": "#E57C00",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

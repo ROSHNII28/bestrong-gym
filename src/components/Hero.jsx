@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, ShieldCheck, Trophy } from 'lucide-react';
+import { TrendingUp, ShieldCheck, Trophy, Dumbbell } from 'lucide-react';
 
 export default function Hero({ onBookSessionClick }) {
   const stats = [
@@ -21,18 +21,26 @@ export default function Hero({ onBookSessionClick }) {
 
       <div className="max-w-[1200px] w-full z-20 flex flex-col items-start justify-center">
         <div className="max-w-4xl w-full text-left">
-          {/* Welcome row */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-8 animate-fade-in-up">
-            {/* Welcome Label + Line */}
+          {/* Welcome row & Equipment Badge */}
+          <div className="flex flex-col items-start gap-3 mb-6 animate-fade-in-up">
             <div className="flex items-center gap-3 sm:gap-4">
               <span className="text-primary text-sm sm:text-base md:text-lg font-bold tracking-widest uppercase">
-                WELCOME TO BE STRONG FITNESS CLUB
+                WELCOME TO BE STRONG FITNESS CLUB • CHALISGAON
               </span>
               <div className="h-[2px] w-12 sm:w-16 bg-primary opacity-80" />
             </div>
+
+            {/* Being Strong / Jerai Fitness Verified Equipment Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/40 text-primary text-xs font-heading font-bold uppercase tracking-wider backdrop-blur-sm shadow-sm">
+              <Dumbbell size={14} className="text-primary" />
+              Equipped with Being Strong (Jerai Fitness) Premium Equipment
+            </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-[0.95] text-text-white mb-8 animate-fade-in-up delay-100 font-heading">
+          <h1
+            aria-label="Transform Your Body, Build Your Strength at Be Strong Fitness Club Chalisgaon"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-[0.95] text-text-white mb-8 animate-fade-in-up delay-100 font-heading"
+          >
             Transform Your <br />
             Body. <br />
             Build Your <br />
@@ -40,7 +48,7 @@ export default function Hero({ onBookSessionClick }) {
           </h1>
 
           <p className="text-base md:text-lg text-text-muted mb-8 max-w-2xl leading-relaxed animate-fade-in-up delay-200">
-            Step into the ultimate fitness arena. Experience state-of-the-art facilities, certified coaching, and a driven community supporting your transformation.
+            Step into Chalisgaon's premier fitness arena, fully equipped with world-class <span className="text-text-white font-semibold">Being Strong (Jerai Fitness)</span> precision machinery, certified coaches, and a driven community supporting your transformation.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12 animate-fade-in-up delay-300">

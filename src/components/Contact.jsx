@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, Navigation, ExternalLink } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -141,30 +141,69 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Mock Google Map */}
-            <div className="relative w-full h-64 bg-bg-card border border-border rounded-lg flex items-center justify-center overflow-hidden">
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: 'linear-gradient(rgba(12,12,14,0.85), rgba(12,12,14,0.85)), repeating-linear-gradient(0deg, #18181F, #18181F 2px, transparent 2px, transparent 40px), repeating-linear-gradient(90deg, #18181F, #18181F 2px, transparent 2px, transparent 40px)',
-                }}
-              />
-              <div className="z-10 text-center">
-                <div className="text-primary mb-2 inline-block animate-bounce">
-                  <MapPin size={36} />
+            {/* Google Maps Location Card (Styled in the exact form of the image) */}
+            <div className="relative w-full rounded-2xl overflow-hidden border border-border bg-white shadow-2xl transition-all duration-300 hover:border-primary/50 text-left">
+              {/* Image-Style Top Header Banner */}
+              <div className="p-4 md:p-5 bg-white border-b border-gray-100 flex items-start gap-3.5">
+                <div className="text-[#1a73e8] mt-0.5 shrink-0">
+                  <MapPin size={24} className="fill-[#1a73e8]/10 text-[#1a73e8]" />
                 </div>
-                <h4 className="text-base font-bold text-text-white uppercase tracking-wide font-heading">
-                  BE STRONG FITNESS CLUB
-                </h4>
-                <p className="text-text-muted text-xs mt-1">452 Iron Strength Avenue</p>
-                <a
-                  href="https://maps.app.goo.gl/fzj7TsjMwZztzeGeA"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-primary text-xs font-bold mt-3 inline-block border-b border-dashed border-primary hover:text-primary-hover hover:border-primary-hover transition-colors"
-                >
-                  Get Directions
-                </a>
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-base font-bold text-gray-900 font-heading tracking-wide">
+                    Our Location
+                  </h4>
+                  <p className="text-xs text-gray-600 mt-0.5 leading-relaxed font-body">
+                    2nd floor, Sai complex, Station Rd, in front of Ravi college, Hanuman Wadi, Chalisgaon, Maharashtra – 424101
+                  </p>
+                </div>
+              </div>
+
+              {/* Embedded Google Map */}
+              <div className="relative w-full h-72 md:h-80 bg-gray-100">
+                <iframe
+                  title="Be Strong Fitness Club Google Maps Location"
+                  src="https://maps.google.com/maps?q=2nd+floor+Sai+complex+Station+Rd+in+front+of+Ravi+college+Hanuman+Wadi+Chalisgaon+Maharashtra+424101&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                />
+              </div>
+
+              {/* Bottom Quick Action Bar */}
+              <div className="p-3.5 bg-bg-card border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="flex items-center gap-2 text-left w-full sm:w-auto">
+                  <div className="text-primary shrink-0">
+                    <MapPin size={16} />
+                  </div>
+                  <span className="text-xs text-text-muted truncate max-w-[220px] sm:max-w-[260px]">
+                    Sai Complex, Station Rd, Chalisgaon
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=2nd+floor+Sai+complex+Station+Rd+Hanuman+Wadi+Chalisgaon+Maharashtra+424101"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider font-heading text-primary bg-primary/10 hover:bg-primary hover:text-text-dark rounded-md transition-all duration-200 border border-primary/30"
+                  >
+                    <Navigation size={13} />
+                    <span>Get Directions</span>
+                  </a>
+                  <a
+                    href="https://maps.app.goo.gl/fzj7TsjMwZztzeGeA"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider font-heading text-text-light hover:text-text-white bg-white/5 hover:bg-white/10 rounded-md transition-all duration-200 border border-border"
+                  >
+                    <ExternalLink size={13} />
+                    <span>Open in Maps</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
